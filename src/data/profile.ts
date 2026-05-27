@@ -37,6 +37,11 @@ export type FriendLink = {
   note: string;
 };
 
+export type BulletinEntry = {
+  question: string;
+  answer: string;
+};
+
 export const profile = {
   name: "didilili的小岛工作台",
   title: "Agent 工程师的小岛工作台",
@@ -144,6 +149,29 @@ export const workbenchTabs = [
       "一些 prompt、流程和工具调用实践",
       "这座可爱的小岛工作台",
     ],
+  },
+];
+
+export const bulletinEntries: BulletinEntry[] = [
+  {
+    question: "为什么做这个博客？",
+    answer:
+      "因为我想给自己的学习和实验留一座小岛。这里不急着证明什么，只把走过的路、踩过的坑、偶尔发亮的念头晒出来，等后来的人路过时能少迷路一点。",
+  },
+  {
+    question: "为什么转向 AI agents？",
+    answer:
+      "前端让我相信体验可以照顾人，agents 让我看到工具也可以有一点主动性。我想把这两件事接起来：让复杂流程不再像迷宫，而像一条有人点灯的小路。",
+  },
+  {
+    question: "这个教程会持续更新吗？",
+    answer:
+      "会慢慢更新。它不会是一座一次性完工的城堡，更像每天补一块木板的码头：先能登岛，再把路线、示例、工具和真实问题一点点补齐。",
+  },
+  {
+    question: "我相信什么样的技术？",
+    answer:
+      "我相信温柔但有用的技术。它应该把人从重复和混乱里托起来，也应该允许一点好奇、一点审美、一点不那么功利的理想主义。",
   },
 ];
 

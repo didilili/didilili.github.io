@@ -561,6 +561,69 @@ a {
   object-fit: cover;
 }
 
+.bulletin-section {
+  padding-top: 44px;
+}
+
+.bulletin-board-card {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(212, 196, 168, 0.2) 1px, transparent 1px),
+    linear-gradient(rgba(212, 196, 168, 0.2) 1px, transparent 1px),
+    rgba(255, 249, 230, 0.78);
+  background-size: 28px 28px;
+  cursor: default;
+}
+
+.bulletin-board-card:hover {
+  transform: none;
+}
+
+.bulletin-pin-row {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  left: 24px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.bulletin-pin-row span {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff9e6;
+  border-radius: 50%;
+  background: #f7c9ca;
+  box-shadow: 0 3px 0 rgba(114, 93, 66, 0.2);
+}
+
+.bulletin-note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.bulletin-note {
+  border: 2px dashed #d4c4a8;
+  border-radius: 18px;
+  background: rgba(248, 248, 240, 0.68);
+  padding: 12px;
+  box-shadow: 0 5px 0 rgba(189, 174, 160, 0.32);
+}
+
+.bulletin-note:nth-child(2n) {
+  transform: rotate(0.6deg);
+}
+
+.bulletin-note:nth-child(2n + 1) {
+  transform: rotate(-0.5deg);
+}
+
 .project-section > div {
   max-width: 860px;
   margin: 0 auto;
@@ -1189,6 +1252,7 @@ a {
   .hero-section,
   .two-column,
   .workbench-grid,
+  .bulletin-note-grid,
   .note-grid,
   .bottle-filter-bar,
   .friend-ticket > div {
