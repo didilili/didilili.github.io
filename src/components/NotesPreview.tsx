@@ -6,7 +6,7 @@ export function NotesPreview() {
     <section className="content-section" id="notes">
       <div className="section-heading-center">
         <p className="section-kicker">Notes</p>
-        <h2>还没长大的笔记区</h2>
+        <h2>还没长大的漂流瓶笔记</h2>
       </div>
       <div className="note-grid">
         {notes.map((note) => (

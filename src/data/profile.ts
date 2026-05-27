@@ -23,8 +23,8 @@ export const profile = {
   name: "didilili",
   title: "Agent 工程师的小岛工作台",
   subtitle:
-    "曾经写前端，现在在折腾 AI agents。这里放一些教程、实验记录和还没完全长成的想法。",
-  status: "Agent island online",
+    "这里是一座给 AI agents、前端手艺和奇思妙想停靠的小岛。我把教程、实验、失败日志和发光的念头都晒在海风里，慢慢造一间可以招待后来者的工具屋。",
+  status: "Island dream lab online",
   links: {
     github: "https://github.com/didilili",
     tutorial: "https://github.com/didilili/ai-agents-from-zero",
@@ -32,7 +32,7 @@ export const profile = {
   },
   email: "dili@outlook.com",
   about:
-    "我是一位 AI agents 开发工程师，也做过很长一段时间前端。现在更关心怎么把 agents、工作流、工具调用和产品体验连接起来，然后把踩过的坑整理成别人也能上手的路线。",
+    "履历没有烟花，但我还在认真收集星星。从前写前端，后来把好奇心驶向 AI agents。喜欢把混乱的问题拆成可以摸到的按钮、流程和小工具，也相信技术不只用来交付功能，还可以帮人把想象力照亮一点。",
   skills: [
     "AI Agents",
     "Dify",
@@ -49,7 +49,7 @@ export const dockItems: DockItem[] = [
   {
     key: "about",
     label: "关于我",
-    description: "前端出身，现在在做 agents",
+    description: "一个还在发光的普通人",
     href: "#about",
     color: "app-teal",
     iconName: "icon-map",
@@ -57,7 +57,7 @@ export const dockItems: DockItem[] = [
   {
     key: "tutorial",
     label: "教程",
-    description: "ai-agents-from-zero",
+    description: "从零登岛的 agent 航线",
     href: profile.links.tutorial,
     external: true,
     color: "app-yellow",
@@ -66,7 +66,7 @@ export const dockItems: DockItem[] = [
   {
     key: "notes",
     label: "笔记",
-    description: "实验、草稿和踩坑记录",
+    description: "漂流瓶、草稿和灵感碎片",
     href: "#notes",
     color: "app-pink",
     iconName: "icon-design",
@@ -74,7 +74,7 @@ export const dockItems: DockItem[] = [
   {
     key: "github",
     label: "GitHub",
-    description: "代码和公开项目",
+    description: "代码贝壳和公开作品",
     href: profile.links.github,
     external: true,
     color: "app-blue",
@@ -85,35 +85,47 @@ export const dockItems: DockItem[] = [
 export const workbenchTabs = [
   {
     key: "doing",
-    label: "现在在做",
-    items: ["整理 agents 入门路线", "把前端经验迁移到 AI 产品", "研究工具调用和工作流编排"],
+    label: "正在发芽",
+    items: [
+      "给 agents 入门路线铺小径",
+      "把前端手艺改造成 AI 产品的木工台",
+      "研究工具调用、记忆和工作流的潮汐",
+    ],
   },
   {
     key: "writing",
-    label: "想写",
-    items: ["从零搭一个 agent", "Dify / Coze 实战对比", "agents 产品里的前端体验"],
+    label: "想慢慢写",
+    items: [
+      "从零孵出一个可用 agent",
+      "Dify / Coze 的小岛测评",
+      "agents 产品里那些会发光的前端体验",
+    ],
   },
   {
     key: "done",
-    label: "已整理",
-    items: ["ai-agents-from-zero 教程仓库", "一些 prompt 和工作流实践", "这个可爱的小岛工作台"],
+    label: "已经上岸",
+    items: [
+      "ai-agents-from-zero 教程仓库",
+      "一些 prompt、流程和工具调用实践",
+      "这座可爱的小岛工作台",
+    ],
   },
 ];
 
 export const notes: NotePreview[] = [
   {
-    title: "Agent 实验记录",
+    title: "Agent 魔法手账",
     status: "drafting",
-    summary: "把零散实验整理成可以复现的步骤，先从最小可用 agent 开始。",
+    summary: "把零散实验晒成一张能复现的藏宝图，从最小可用 agent 开始。",
   },
   {
-    title: "工作流踩坑",
+    title: "工作流退潮笔记",
     status: "idea",
-    summary: "记录 Dify、Coze、工具调用和编排时遇到的真实问题。",
+    summary: "记录 Dify、Coze、工具调用和编排里那些真实的浪花、暗礁和小发现。",
   },
   {
-    title: "前端开发旧笔记",
+    title: "前端旧船票",
     status: "coming soon",
-    summary: "有些前端经验仍然有用，尤其是体验、状态和工程化。",
+    summary: "从前端时代带来的手艺还在发光：体验、状态、组件和工程化，都能继续给 agents 造桥。",
   },
 ];

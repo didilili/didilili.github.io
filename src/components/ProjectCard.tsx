@@ -8,8 +8,9 @@ export function ProjectCard() {
         <p className="section-kicker">Main project</p>
         <h2>ai-agents-from-zero</h2>
         <p className="section-copy">
-          目前最像“成果”的东西：一份从零开始理解 AI agents
-          的教程仓库。它不是终点，更像我给自己和后来者铺的一条上岛路线。
+          如果要在岛上插一面小旗，目前最像小旗的就是它：一份从零开始理解
+          AI agents 的教程仓库。它不是宏伟纪念碑，更像我一边赶海一边铺下的路标，
+          希望后来的人少绕一点弯，也多保留一点好奇。
         </p>
         <div className="project-tags">
           <span>AI Agents</span>
@@ -36,7 +37,7 @@ export function ProjectCard() {
         </div>
         <Collapse
           question="这个教程适合谁？"
-          answer="适合想从概念、工具和实际项目慢慢进入 AI agents 的人。内容会随着我的实践继续整理。"
+          answer="适合想从概念、工具和实际项目慢慢进入 AI agents 的人。内容会随着我的实践继续生长，像岛上的小树一样，今天多一片叶子，明天多一条路。"
         />
       </Card>
     </section>

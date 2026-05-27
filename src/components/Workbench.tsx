@@ -16,7 +16,7 @@ export function Workbench() {
       <div className="section-heading-center">
         <p className="section-kicker">Workbench</p>
         <h2>小岛工作台</h2>
-        <p>内容还不多，所以让组件先热闹起来。</p>
+        <p>内容还在长叶子，先让按钮、标签和小组件一起热闹起来。</p>
       </div>
       <div className="workbench-grid">
         <Card color="app-teal">
@@ -49,7 +49,7 @@ export function Workbench() {
           <CodeBlock code={agentSnippet} className="local-code-block" />
           <Collapse
             question="为什么放伪代码？"
-            answer="因为这个站点首先是一个小工作台，不是正式文档。伪代码刚好表达我在思考的方向。"
+            answer="因为这里首先是一张手作工作台，不是严肃到不能呼吸的正式文档。伪代码像铅笔草图，刚好可以留下我正在想象的方向。"
           />
         </Card>
       </div>
