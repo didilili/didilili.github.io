@@ -413,6 +413,15 @@ a {
   transform: translateY(-5px) rotate(-1deg);
 }
 
+.dock-link-about > div {
+  border-color: #d4c4a8;
+  background: #fff9e6 !important;
+}
+
+.dock-link-about .dock-icon {
+  background: #e6f9f6;
+}
+
 .dock-icon {
   display: inline-flex;
   width: 54px;

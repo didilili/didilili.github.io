@@ -10,7 +10,7 @@ export function NookPhoneDock() {
         <div className="dock-grid">
           {dockItems.map((item) => (
             <a
-              className="dock-link"
+              className={`dock-link dock-link-${item.key}`}
               href={item.href}
               key={item.key}
               target={item.external ? "_blank" : undefined}
