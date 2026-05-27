@@ -379,7 +379,7 @@ a {
 }
 
 .phone-screen {
-  min-height: 470px;
+  min-height: 560px;
   border-radius: 48px;
   padding: 28px 18px;
   background:
@@ -402,8 +402,15 @@ a {
   gap: 14px;
 }
 
+.dock-link {
+  display: grid;
+  min-width: 0;
+}
+
 .dock-link > div {
-  min-height: 156px;
+  height: 128px;
+  min-height: 128px;
+  padding: 18px 14px;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -424,8 +431,8 @@ a {
 
 .dock-icon {
   display: inline-flex;
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
   border-radius: 22px;
@@ -438,16 +445,20 @@ a {
 }
 
 .dock-link strong {
-  margin-top: 10px;
+  margin-top: 8px;
   color: #725d42;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .dock-link small {
+  display: -webkit-box;
   margin-top: 4px;
+  overflow: hidden;
   color: #725d42;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 11px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .content-section {
@@ -1256,7 +1267,7 @@ a {
   }
 
   .phone-screen {
-    min-height: 430px;
+    min-height: 520px;
     border-radius: 34px;
     padding: 22px 14px;
   }
@@ -1266,7 +1277,8 @@ a {
   }
 
   .dock-link > div {
-    min-height: 142px;
+    height: 122px;
+    min-height: 122px;
   }
 
   .island-loading-surface {
