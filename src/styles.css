@@ -470,6 +470,7 @@ a {
 
 .site-footer {
   padding-top: 40px;
+  overflow: hidden;
 }
 
 .footer-card {
@@ -481,6 +482,15 @@ a {
 
 .footer-actions {
   justify-content: center;
+}
+
+.footer-sea {
+  width: 100vw !important;
+  height: clamp(96px, 12vw, 160px) !important;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background-position: center bottom !important;
+  background-size: cover !important;
 }
 
 @media (max-width: 920px) {

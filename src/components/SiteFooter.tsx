@@ -26,7 +26,7 @@ export function SiteFooter() {
           </Button>
         </div>
       </div>
-      <Footer type="sea" />
+      <Footer type="sea" className="footer-sea" />
     </footer>
   );
 }
