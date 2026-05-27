@@ -263,6 +263,67 @@ a {
   text-shadow: 0 4px 0 rgba(189, 174, 160, 0.48);
 }
 
+.hero-profile-badge {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  max-width: 100%;
+  margin: -6px 0 18px;
+  border: 3px solid rgba(255, 249, 230, 0.95);
+  border-radius: 999px 999px 999px 26px;
+  background:
+    radial-gradient(circle at 24% 22%, rgba(255, 255, 255, 0.62) 0 7px, transparent 8px),
+    #fff9e6;
+  box-shadow:
+    0 5px 0 #bdaea0,
+    0 14px 22px rgba(114, 93, 66, 0.12);
+  padding: 7px 16px 7px 7px;
+  transform: rotate(-1.5deg);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-profile-badge:hover {
+  transform: translateY(-3px) rotate(1deg);
+  box-shadow:
+    0 8px 0 #bdaea0,
+    0 18px 24px rgba(114, 93, 66, 0.15);
+}
+
+.hero-profile-badge img {
+  width: 52px;
+  height: 52px;
+  border: 3px solid #82d5bb;
+  border-radius: 41% 47% 38% 45%;
+  object-fit: cover;
+}
+
+.hero-profile-badge span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hero-profile-badge strong,
+.hero-profile-badge small {
+  overflow: hidden;
+  color: #794f27;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-profile-badge strong {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.hero-profile-badge small {
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .eyebrow,
 .section-kicker {
   margin: 0 0 10px;
@@ -418,6 +479,66 @@ a {
   padding: 7px 12px;
   font-size: 13px;
   font-weight: 800;
+}
+
+.profile-postcard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.profile-avatar-link {
+  position: relative;
+  display: inline-flex;
+  width: 112px;
+  height: 112px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed #d4c4a8;
+  border-radius: 38% 44% 40% 46%;
+  background:
+    radial-gradient(circle at 28% 20%, #fff9e6 0 8px, transparent 9px),
+    radial-gradient(circle at 76% 76%, #f7c9ca 0 10px, transparent 11px),
+    #e6f9f6;
+  box-shadow:
+    0 6px 0 #bdaea0,
+    0 14px 20px rgba(114, 93, 66, 0.13);
+  transform: rotate(-2deg);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.profile-avatar-link::after {
+  position: absolute;
+  right: -10px;
+  bottom: 8px;
+  width: 34px;
+  height: 22px;
+  border-radius: 999px 999px 12px 12px;
+  content: "";
+  background:
+    radial-gradient(circle at 27% 45%, #725d42 0 3px, transparent 4px),
+    radial-gradient(circle at 73% 45%, #725d42 0 3px, transparent 4px),
+    linear-gradient(#82d5bb 0 0);
+  box-shadow: 0 4px 0 rgba(114, 93, 66, 0.18);
+}
+
+.profile-avatar-link:hover {
+  transform: translateY(-4px) rotate(1deg);
+  box-shadow:
+    0 9px 0 #bdaea0,
+    0 18px 24px rgba(114, 93, 66, 0.16);
+}
+
+.profile-avatar {
+  width: 86px;
+  height: 86px;
+  border: 3px solid #fff9e6;
+  border-radius: 34% 42% 36% 44%;
+  object-fit: cover;
 }
 
 .project-section > div {
@@ -922,6 +1043,10 @@ a {
 
   .task-board-heading > span {
     text-align: left;
+  }
+
+  .profile-postcard {
+    grid-template-columns: 1fr;
   }
 
   .hero-section {

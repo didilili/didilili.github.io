@@ -39,6 +39,7 @@ export const profile = {
     tutorial: "https://github.com/didilili/ai-agents-from-zero",
     email: "mailto:dili@outlook.com",
   },
+  avatar: "https://github.com/didilili.png",
   email: "dili@outlook.com",
   about:
     "履历没有烟花，但我还在认真收集星星。从前写前端，后来把好奇心驶向 AI agents。喜欢把混乱的问题拆成可以摸到的按钮、流程和小工具，也相信技术不只用来交付功能，还可以帮人把想象力照亮一点。",
