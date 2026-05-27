@@ -48,6 +48,120 @@ a {
   overflow: hidden;
 }
 
+.island-loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.island-loading-surface {
+  isolation: isolate;
+  padding-right: clamp(18px, 6vw, 78px) !important;
+  padding-bottom: clamp(18px, 6vh, 64px) !important;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 241, 137, 0.96) 0 62px,
+      rgba(255, 241, 137, 0.24) 63px 92px,
+      transparent 93px
+    ),
+    radial-gradient(
+      ellipse at 72% 22%,
+      rgba(255, 255, 255, 0.88) 0 36px,
+      transparent 37px
+    ),
+    radial-gradient(
+      ellipse at 78% 22%,
+      rgba(255, 255, 255, 0.78) 0 48px,
+      transparent 49px
+    ),
+    radial-gradient(
+      ellipse at 67% 23%,
+      rgba(255, 255, 255, 0.74) 0 30px,
+      transparent 31px
+    ),
+    linear-gradient(
+      180deg,
+      #8bdcf8 0%,
+      #b8f0ff 44%,
+      #f8e8a4 44%,
+      #f8e8a4 56%,
+      #74d2d0 56%,
+      #54b8d6 100%
+    ) !important;
+}
+
+.island-loading-surface::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 22vh;
+  min-height: 150px;
+  content: "";
+  background:
+    radial-gradient(
+      ellipse at 12% 18%,
+      rgba(255, 255, 255, 0.35) 0 12px,
+      transparent 13px
+    ),
+    radial-gradient(
+      ellipse at 32% 32%,
+      rgba(255, 255, 255, 0.32) 0 16px,
+      transparent 17px
+    ),
+    radial-gradient(
+      ellipse at 58% 20%,
+      rgba(255, 255, 255, 0.28) 0 14px,
+      transparent 15px
+    ),
+    repeating-radial-gradient(
+      ellipse at 50% -20%,
+      rgba(255, 255, 255, 0.46) 0 12px,
+      rgba(255, 255, 255, 0.46) 13px,
+      transparent 14px,
+      transparent 34px
+    );
+  opacity: 0.82;
+}
+
+.island-loading-surface::after {
+  position: absolute;
+  top: min(58vh, 520px);
+  left: clamp(24px, 9vw, 140px);
+  z-index: 2;
+  padding: 14px 24px;
+  color: #725d42;
+  font-size: clamp(18px, 2.2vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  content: "正在登岛中...";
+  background: rgba(255, 249, 230, 0.88);
+  border: 3px solid #9f927d;
+  border-radius: 999px;
+  box-shadow: 0 6px 0 #bdaea0;
+  animation: island-loading-bob 1.2s ease-in-out infinite;
+}
+
+.island-loading-surface .illustration {
+  width: min(28vw, 250px) !important;
+  max-width: 250px !important;
+  max-height: 280px !important;
+  filter: drop-shadow(0 12px 0 rgba(50, 122, 147, 0.18));
+}
+
+@keyframes island-loading-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -441,5 +555,20 @@ a {
 
   .dock-link > div {
     min-height: 142px;
+  }
+
+  .island-loading-surface {
+    padding-right: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .island-loading-surface::after {
+    top: 58vh;
+    left: 18px;
+    max-width: calc(100vw - 36px);
+  }
+
+  .island-loading-surface .illustration {
+    width: 150px !important;
   }
 }
