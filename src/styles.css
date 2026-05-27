@@ -1,0 +1,30 @@
+:root {
+  font-family: Nunito, "Noto Sans SC", "Zen Maru Gothic", -apple-system,
+    BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  color: #725d42;
+  background: #7dc395;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #7dc395;
+}
+
+a {
+  color: inherit;
+}
+
+.island-page {
+  min-height: 100vh;
+}
