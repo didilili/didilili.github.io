@@ -29,7 +29,7 @@ export type IslandTask = {
 };
 
 export const profile = {
-  name: "didilili",
+  name: "didilili的小岛工作台",
   title: "Agent 工程师的小岛工作台",
   subtitle:
     "这里是一座给 AI agents、前端手艺和奇思妙想停靠的小岛。我把教程、实验、失败日志和发光的念头都晒在海风里，慢慢造一间可以招待后来者的工具屋。",
@@ -132,13 +132,15 @@ export const notes: NotePreview[] = [
     title: "前端旧船票",
     status: "coming soon",
     category: "frontend",
-    summary: "从前端时代带来的手艺还在发光：体验、状态、组件和工程化，都能继续给 agents 造桥。",
+    summary:
+      "从前端时代带来的手艺还在发光：体验、状态、组件和工程化，都能继续给 agents 造桥。",
   },
   {
     title: "从零登岛路线",
     status: "drafting",
     category: "tutorial",
-    summary: "把 ai-agents-from-zero 整理成更温柔的航线图，让第一次登岛的人也不迷路。",
+    summary:
+      "把 ai-agents-from-zero 整理成更温柔的航线图，让第一次登岛的人也不迷路。",
   },
 ];
 
