@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Cursor, Divider, Loading } from "animal-island-ui";
 import { AboutSection } from "./components/AboutSection";
 import { Hero } from "./components/Hero";
+import { IslandBroadcast } from "./components/IslandBroadcast";
 import { NotesPreview } from "./components/NotesPreview";
 import { ProjectCard } from "./components/ProjectCard";
 import { SiteFooter } from "./components/SiteFooter";
@@ -44,6 +45,7 @@ export default function App() {
           </div>
         ) : null}
         <SiteHeader />
+        <IslandBroadcast />
         <Hero />
         <main>
           <AboutSection />

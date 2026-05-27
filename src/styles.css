@@ -289,6 +289,14 @@ a {
   margin-top: 24px;
 }
 
+.broadcast-copy {
+  max-width: 420px;
+  color: #725d42;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
 .nook-phone {
   justify-self: center;
   width: min(100%, 390px);
@@ -457,6 +465,76 @@ a {
   max-width: 100%;
 }
 
+.task-board-card {
+  margin-top: 22px;
+  cursor: default;
+}
+
+.task-board-card:hover {
+  transform: none;
+}
+
+.task-board-heading {
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.task-board-heading h3 {
+  margin: 0;
+  color: #794f27;
+  font-size: 26px;
+}
+
+.task-board-heading > span {
+  max-width: 320px;
+  color: #725d42;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.task-name {
+  color: #794f27;
+}
+
+.task-state {
+  display: inline-flex;
+  border: 2px solid #6fba2c;
+  border-radius: 999px;
+  background: #f0ffd8;
+  color: #5a7f25;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.bottle-filter-bar {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: end;
+  margin: 0 auto 24px;
+  border: 2px dashed #d4c4a8;
+  border-radius: 24px;
+  background: rgba(255, 249, 230, 0.7);
+  padding: 18px;
+}
+
+.filter-field {
+  display: grid;
+  gap: 8px;
+}
+
+.filter-field > span {
+  color: #794f27;
+  font-size: 13px;
+  font-weight: 900;
+}
+
 .note-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -466,6 +544,33 @@ a {
 .note-grid h3 {
   margin: 18px 0 8px;
   color: #794f27;
+}
+
+.note-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.note-category {
+  border: 2px solid #82d5bb;
+  border-radius: 999px;
+  background: #e6f9f6;
+  color: #0f7f77;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.empty-bottle-card {
+  margin-top: 18px;
+  color: #725d42;
+  text-align: center;
+  cursor: default;
+}
+
+.empty-bottle-card:hover {
+  transform: none;
 }
 
 .site-footer {
@@ -514,8 +619,18 @@ a {
   .hero-section,
   .two-column,
   .workbench-grid,
-  .note-grid {
+  .note-grid,
+  .bottle-filter-bar {
     grid-template-columns: 1fr;
+  }
+
+  .task-board-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .task-board-heading > span {
+    text-align: left;
   }
 
   .hero-section {

@@ -16,7 +16,16 @@ export type DockItem = LinkItem & {
 export type NotePreview = {
   title: string;
   status: "drafting" | "idea" | "coming soon";
+  category: "tutorial" | "experiment" | "frontend";
   summary: string;
+};
+
+export type IslandTask = {
+  key: string;
+  task: string;
+  state: string;
+  tool: string;
+  sparkle: string;
 };
 
 export const profile = {
@@ -116,16 +125,50 @@ export const notes: NotePreview[] = [
   {
     title: "Agent 魔法手账",
     status: "drafting",
+    category: "experiment",
     summary: "把零散实验晒成一张能复现的藏宝图，从最小可用 agent 开始。",
-  },
-  {
-    title: "工作流退潮笔记",
-    status: "idea",
-    summary: "记录 Dify、Coze、工具调用和编排里那些真实的浪花、暗礁和小发现。",
   },
   {
     title: "前端旧船票",
     status: "coming soon",
+    category: "frontend",
     summary: "从前端时代带来的手艺还在发光：体验、状态、组件和工程化，都能继续给 agents 造桥。",
+  },
+  {
+    title: "从零登岛路线",
+    status: "drafting",
+    category: "tutorial",
+    summary: "把 ai-agents-from-zero 整理成更温柔的航线图，让第一次登岛的人也不迷路。",
+  },
+];
+
+export const islandTasks: IslandTask[] = [
+  {
+    key: "minimum-agent",
+    task: "孵化最小可用 agent",
+    state: "正在发芽",
+    tool: "Python / Workflow",
+    sparkle: "让概念先跑起来",
+  },
+  {
+    key: "tutorial-map",
+    task: "整理从零教程航线",
+    state: "已经上岸",
+    tool: "Markdown / GitHub",
+    sparkle: "给后来者留路标",
+  },
+  {
+    key: "tool-calling",
+    task: "观察工具调用潮汐",
+    state: "潮汐观察中",
+    tool: "Dify / Coze",
+    sparkle: "找到可靠的编排节奏",
+  },
+  {
+    key: "frontend-spells",
+    task: "把前端体验变成 agent 手艺",
+    state: "慢慢打磨",
+    tool: "React / TypeScript",
+    sparkle: "让界面也会照顾人",
   },
 ];
