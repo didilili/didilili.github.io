@@ -483,21 +483,6 @@ a {
   justify-content: center;
 }
 
-.footer-email {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 22px;
-  color: #725d42;
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-}
-
-.footer-email:hover {
-  color: #0f9f95;
-}
-
 @media (max-width: 920px) {
   .site-header {
     position: static;
