@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Cursor, Divider, Loading } from "animal-island-ui";
 import { AboutSection } from "./components/AboutSection";
+import { FriendLinks } from "./components/FriendLinks";
 import { Hero } from "./components/Hero";
 import { IslandBroadcast } from "./components/IslandBroadcast";
 import { NotesPreview } from "./components/NotesPreview";
@@ -53,6 +54,7 @@ export default function App() {
           <ProjectCard />
           <Workbench />
           <NotesPreview />
+          <FriendLinks />
         </main>
         <SiteFooter />
       </div>

@@ -28,6 +28,15 @@ export type IslandTask = {
   sparkle: string;
 };
 
+export type FriendLink = {
+  name: string;
+  description: string;
+  href: string;
+  avatar: string;
+  tag: string;
+  note: string;
+};
+
 export const profile = {
   name: "didilili的小岛工作台",
   title: "Agent 工程师的小岛工作台",
@@ -142,6 +151,18 @@ export const notes: NotePreview[] = [
     category: "tutorial",
     summary:
       "把 ai-agents-from-zero 整理成更温柔的航线图，让第一次登岛的人也不迷路。",
+  },
+];
+
+export const friendLinks: FriendLink[] = [
+  {
+    name: "Chiikawa 吉伊卡哇情报站",
+    description: "乌萨奇的好朋友，停靠在这条温柔又热闹的邻岛航线。",
+    href: "https://www.anime-chiikawa.jp/",
+    avatar:
+      "https://i0.wp.com/chiikawahk.com/wp-content/uploads/2023/12/image-3.png?resize=300%2C295&ssl=1",
+    tag: "Neighbor island",
+    note: "坐小船去看看吉伊卡哇的可爱情报。",
   },
 ];
 

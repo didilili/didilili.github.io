@@ -694,6 +694,144 @@ a {
   transform: none;
 }
 
+.friends-section {
+  padding-top: 52px;
+}
+
+.friend-link-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.friend-ticket {
+  display: block;
+}
+
+.friend-ticket > div {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  min-height: 190px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(130, 213, 187, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(130, 213, 187, 0.18) 1px, transparent 1px),
+    rgba(255, 249, 230, 0.72);
+  background-size: 22px 22px;
+}
+
+.friend-ticket > div::before,
+.friend-ticket > div::after {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.friend-ticket > div::before {
+  right: -42px;
+  bottom: -48px;
+  width: 170px;
+  height: 108px;
+  border-radius: 999px 999px 0 0;
+  background:
+    radial-gradient(circle at 34% 64%, #0f9f95 0 10px, transparent 11px),
+    radial-gradient(circle at 57% 48%, #6fba2c 0 12px, transparent 13px),
+    #82d5bb;
+  opacity: 0.82;
+}
+
+.friend-ticket > div::after {
+  right: 42px;
+  bottom: 28px;
+  width: 88px;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 20% 50%, #54b8d6 0 3px, transparent 4px),
+    radial-gradient(circle at 44% 50%, #54b8d6 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 50%, #54b8d6 0 3px, transparent 4px);
+  opacity: 0.58;
+}
+
+.friend-ticket:hover > div {
+  transform: translateY(-6px) rotate(-0.6deg);
+}
+
+.friend-ticket-tag,
+.friend-avatar-wrap,
+.friend-ticket-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.friend-ticket-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: 2px solid #82d5bb;
+  border-radius: 999px;
+  background: #e6f9f6;
+  color: #0f7f77;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.friend-avatar-wrap {
+  display: inline-flex;
+  width: 118px;
+  height: 118px;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed #d4c4a8;
+  border-radius: 46% 38% 44% 40%;
+  background: #fff9e6;
+  box-shadow: 0 6px 0 #bdaea0;
+  transform: rotate(-2deg);
+}
+
+.friend-avatar-wrap img {
+  width: 92px;
+  height: 92px;
+  border: 3px solid #f7c9ca;
+  border-radius: 50%;
+  background: #f8f8f0;
+  object-fit: contain;
+}
+
+.friend-ticket-copy {
+  display: grid;
+  gap: 10px;
+  padding-right: 124px;
+}
+
+.friend-ticket-copy strong {
+  color: #794f27;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.friend-ticket-copy span,
+.friend-ticket-copy small {
+  color: #725d42;
+  line-height: 1.7;
+}
+
+.friend-ticket-copy span {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.friend-ticket-copy small {
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .site-footer {
   padding-top: 40px;
   overflow: hidden;
@@ -1032,7 +1170,8 @@ a {
   .two-column,
   .workbench-grid,
   .note-grid,
-  .bottle-filter-bar {
+  .bottle-filter-bar,
+  .friend-ticket > div {
     grid-template-columns: 1fr;
   }
 
@@ -1052,6 +1191,17 @@ a {
   .hero-section {
     min-height: auto;
     padding-top: 18px;
+  }
+
+  .friend-ticket-copy {
+    padding-right: 0;
+  }
+
+  .friend-ticket-tag {
+    position: relative;
+    top: auto;
+    right: auto;
+    justify-self: start;
   }
 }
 
