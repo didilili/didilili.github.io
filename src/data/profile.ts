@@ -30,6 +30,7 @@ export const profile = {
     tutorial: "https://github.com/didilili/ai-agents-from-zero",
     email: "mailto:dili@outlook.com",
   },
+  email: "dili@outlook.com",
   about:
     "我是一位 AI agents 开发工程师，也做过很长一段时间前端。现在更关心怎么把 agents、工作流、工具调用和产品体验连接起来，然后把踩过的坑整理成别人也能上手的路线。",
   skills: [

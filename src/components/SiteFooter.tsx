@@ -7,6 +7,9 @@ export function SiteFooter() {
       <div className="footer-card">
         <p className="section-kicker">Contact</p>
         <h2>如果你也在折腾 agents，欢迎来岛上串门。</h2>
+        <a className="footer-email" href={profile.links.email}>
+          {profile.email}
+        </a>
         <div className="hero-actions footer-actions">
           <Button
             type="primary"
