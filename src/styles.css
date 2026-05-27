@@ -639,13 +639,254 @@ a {
   color: #19c8b9;
 }
 
-.footer-sea {
+.footer-ocean {
+  position: relative;
+  isolation: isolate;
   width: 100vw !important;
   height: clamp(96px, 12vw, 160px) !important;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background-position: center bottom !important;
-  background-size: cover !important;
+  overflow: hidden;
+}
+
+.footer-sea {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.footer-ocean::before,
+.footer-ocean::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+.footer-ocean::before {
+  background:
+    repeating-radial-gradient(
+      ellipse at 50% 16%,
+      rgba(255, 255, 255, 0.42) 0 7px,
+      transparent 8px 34px
+    );
+  background-size: 210px 42px;
+  opacity: 0.24;
+  animation: footer-wave-shimmer 8s ease-in-out infinite alternate;
+}
+
+.footer-ocean::after {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 16%,
+      transparent 32%,
+      rgba(31, 142, 172, 0.12) 58%,
+      transparent 82%
+    );
+  opacity: 0.38;
+  transform: translateX(-18%);
+  animation: footer-current-glide 12s ease-in-out infinite;
+}
+
+.footer-ocean-life {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ocean-sprite {
+  position: absolute;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 3px 0 rgba(31, 110, 134, 0.12));
+}
+
+.ocean-fish {
+  height: auto;
+}
+
+.ocean-fish-a {
+  top: 58%;
+  left: -70px;
+  width: 42px;
+  animation:
+    ocean-swim-right 48s linear -16s infinite,
+    ocean-creature-bob 5.8s ease-in-out infinite;
+}
+
+.ocean-fish-b {
+  top: 46%;
+  left: -60px;
+  width: 30px;
+  animation:
+    ocean-swim-right 62s linear -39s infinite,
+    ocean-creature-bob 6.6s ease-in-out 0.9s infinite;
+}
+
+.ocean-boat {
+  top: 12%;
+  left: -92px;
+  width: 52px;
+  height: auto;
+  opacity: 0.88;
+  animation: ocean-boat-sail 78s linear -52s infinite;
+}
+
+.ocean-gull {
+  position: absolute;
+  display: block;
+  overflow: visible;
+  width: 76px;
+  height: auto;
+  fill: none;
+  filter: drop-shadow(0 2px 0 rgba(107, 92, 67, 0.08));
+  stroke: #6b5c43;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.ocean-gull-a {
+  top: 6%;
+  left: -90px;
+  animation: ocean-gull-fly 64s linear -18s infinite;
+}
+
+.ocean-gull-b {
+  top: 20%;
+  left: -110px;
+  width: 58px;
+  animation: ocean-gull-fly 82s linear -52s infinite;
+}
+
+.ocean-gull-wing {
+  transform-box: fill-box;
+  animation: ocean-gull-wingbeat 2.4s ease-in-out infinite;
+}
+
+.ocean-gull-wing-left {
+  transform-origin: 100% 100%;
+}
+
+.ocean-gull-wing-right {
+  transform-origin: 0% 100%;
+  animation-delay: 0.08s;
+}
+
+@keyframes footer-wave-shimmer {
+  from {
+    background-position: 0 0;
+    transform: translateY(0);
+  }
+
+  to {
+    background-position: 160px 10px;
+    transform: translateY(5px);
+  }
+}
+
+@keyframes footer-current-glide {
+  0%,
+  100% {
+    transform: translateX(-18%);
+  }
+
+  50% {
+    transform: translateX(18%);
+  }
+}
+
+@keyframes ocean-swim-right {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+
+  8%,
+  88% {
+    opacity: 1;
+  }
+
+  100% {
+    translate: calc(100vw + 140px) 0;
+    opacity: 0;
+  }
+}
+
+@keyframes ocean-creature-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+@keyframes ocean-boat-sail {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-1deg);
+    opacity: 0;
+  }
+
+  8%,
+  88% {
+    opacity: 1;
+  }
+
+  45% {
+    transform: translateX(52vw) translateY(4px) rotate(1.5deg);
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 170px)) translateY(0) rotate(-1deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ocean-gull-fly {
+  0% {
+    transform: translateX(0) translateY(0) scale(0.92);
+    opacity: 0;
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateX(42vw) translateY(-8px) scale(1);
+  }
+
+  70% {
+    transform: translateX(86vw) translateY(5px) scale(0.9);
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 160px)) translateY(-4px) scale(0.94);
+    opacity: 0;
+  }
+}
+
+@keyframes ocean-gull-wingbeat {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-11deg) translateY(1px);
+  }
 }
 
 @media (max-width: 920px) {
@@ -686,6 +927,18 @@ a {
   .hero-section {
     min-height: auto;
     padding-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-ocean::before,
+  .footer-ocean::after,
+  .footer-sea,
+  .ocean-fish,
+  .ocean-boat,
+  .ocean-gull,
+  .ocean-gull-wing {
+    animation: none;
   }
 }
 
