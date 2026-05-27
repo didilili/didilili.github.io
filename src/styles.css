@@ -243,9 +243,21 @@ a {
   gap: 52px;
   align-items: center;
   max-width: 1180px;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 230px);
   margin: 0 auto;
-  padding: 36px 24px 80px;
+  padding: 10px 24px 76px;
+}
+
+.hero-side {
+  display: grid;
+  align-self: center;
+  justify-items: center;
+}
+
+.hero-main-card {
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
 }
 
 .hero-copy h1,
@@ -622,6 +634,198 @@ a {
 
 .bulletin-note:nth-child(2n + 1) {
   transform: rotate(-0.5deg);
+}
+
+.island-mood-section {
+  padding-top: 30px;
+}
+
+.island-mood-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(320px, 1.16fr);
+  gap: 24px;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(255, 241, 137, 0.42) 0 38px, transparent 39px),
+    linear-gradient(135deg, rgba(230, 249, 246, 0.84), rgba(255, 249, 230, 0.82));
+  cursor: default;
+}
+
+.island-mood-card:hover {
+  transform: none;
+}
+
+.hero-mood-panel {
+  position: absolute;
+  top: -34px;
+  right: 20px;
+  z-index: 2;
+  width: 232px;
+  transform: rotate(2deg);
+}
+
+.hero-weather-note {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  overflow: hidden;
+  border: 2px dashed rgba(183, 164, 135, 0.72);
+  border-radius: 22px 22px 22px 9px;
+  background:
+    linear-gradient(135deg, rgba(255, 249, 230, 0.96), rgba(230, 249, 246, 0.88)),
+    rgba(255, 249, 230, 0.9);
+  box-shadow:
+    0 4px 0 rgba(114, 93, 66, 0.18),
+    0 12px 20px rgba(114, 93, 66, 0.12);
+  padding: 12px 14px 11px;
+}
+
+.hero-weather-pin {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff9fb3;
+  box-shadow:
+    0 2px 0 rgba(114, 93, 66, 0.2),
+    0 0 0 5px rgba(255, 249, 230, 0.78);
+}
+
+.hero-weather-note .section-kicker {
+  position: relative;
+  margin: 0;
+  padding-right: 30px;
+  font-size: 11px;
+}
+
+.hero-weather-text {
+  position: relative;
+  max-width: 188px;
+  margin: 0;
+  color: #725d42;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.hero-weather-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.76fr 1.24fr;
+  gap: 8px;
+  margin: 0;
+}
+
+.hero-weather-list div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  border-top: 2px dashed rgba(212, 196, 168, 0.72);
+  padding-top: 7px;
+}
+
+.hero-weather-list dt {
+  color: #0f9f95;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.hero-weather-list dd {
+  margin: 0;
+  color: #725d42;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.38;
+}
+
+.island-mood-copy h2 {
+  margin: 0;
+  color: #794f27;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.2;
+}
+
+.island-mood-copy p:not(.section-kicker) {
+  color: #725d42;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+.island-mood-dashboard {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.85fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.island-time-card,
+.island-mood-toggle,
+.island-mood-list {
+  border: 2px dashed #d4c4a8;
+  border-radius: 20px;
+  background: rgba(248, 248, 240, 0.78);
+  box-shadow: 0 4px 0 rgba(189, 174, 160, 0.32);
+}
+
+.island-time-card {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  justify-items: center;
+  padding: 14px;
+}
+
+.island-time-card > span,
+.island-mood-toggle > span {
+  color: #0f9f95;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.island-time-card > div {
+  transform: scale(0.82);
+}
+
+.island-mood-toggle {
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.island-mood-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 14px;
+}
+
+.island-mood-list div {
+  display: grid;
+  gap: 3px;
+}
+
+.island-mood-list dt {
+  color: #0f9f95;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.island-mood-list dd {
+  margin: 0;
+  color: #725d42;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.55;
 }
 
 .project-section > div {
@@ -1253,6 +1457,8 @@ a {
   .two-column,
   .workbench-grid,
   .bulletin-note-grid,
+  .island-mood-card,
+  .island-mood-dashboard,
   .note-grid,
   .bottle-filter-bar,
   .friend-ticket > div {
@@ -1275,6 +1481,18 @@ a {
   .hero-section {
     min-height: auto;
     padding-top: 18px;
+  }
+
+  .hero-side {
+    gap: 24px;
+  }
+
+  .hero-mood-panel {
+    position: static;
+    width: min(100%, 300px);
+    margin-bottom: 18px;
+    margin-right: 0;
+    transform: rotate(-1deg);
   }
 
   .friend-ticket-copy {
@@ -1343,6 +1561,10 @@ a {
   .dock-link > div {
     height: 122px;
     min-height: 122px;
+  }
+
+  .hero-weather-list {
+    grid-template-columns: 1fr;
   }
 
   .island-loading-surface {

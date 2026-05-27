@@ -42,6 +42,13 @@ export type BulletinEntry = {
   answer: string;
 };
 
+export type IslandMoodReport = {
+  weather: string;
+  mood: string;
+  status: string;
+  slowStatus: string;
+};
+
 export const profile = {
   name: "didilili的小岛工作台",
   title: "Agent 工程师的小岛工作台",
@@ -172,6 +179,33 @@ export const bulletinEntries: BulletinEntry[] = [
     question: "我相信什么样的技术？",
     answer:
       "我相信温柔但有用的技术。它应该把人从重复和混乱里托起来，也应该允许一点好奇、一点审美、一点不那么功利的理想主义。",
+  },
+];
+
+export const islandMoodReports: IslandMoodReport[] = [
+  {
+    weather: "灵感微风",
+    mood: "适合把零散念头排成小路",
+    status: "正在把混乱整理成路线",
+    slowStatus: "先给想法晒晒太阳",
+  },
+  {
+    weather: "工具屋晴",
+    mood: "适合修一点小按钮和大问题",
+    status: "正在给 agents 补一块木板",
+    slowStatus: "慢慢打磨，也算向前",
+  },
+  {
+    weather: "海面有星光",
+    mood: "适合写一点不那么功利的代码",
+    status: "正在把实验变成可以复现的贝壳",
+    slowStatus: "允许自己在海边多想一会儿",
+  },
+  {
+    weather: "流程潮汐",
+    mood: "适合观察工具调用和真实问题",
+    status: "正在给工作流系上更稳的绳结",
+    slowStatus: "把节奏调轻一点，海风会帮忙",
   },
 ];
 

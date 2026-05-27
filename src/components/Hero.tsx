@@ -1,12 +1,13 @@
 import { Button, Card, Divider } from "animal-island-ui";
 import { profile } from "../data/profile";
+import { IslandMoodPanel } from "./IslandMoodPanel";
 import { NookPhoneDock } from "./NookPhoneDock";
 
 export function Hero() {
   return (
     <section className="hero-section" id="top">
       <div className="hero-copy">
-        <Card type="title" color="app-teal">
+        <Card type="title" color="app-teal" className="hero-main-card">
           <a
             className="hero-profile-badge"
             href={profile.links.github}
@@ -20,6 +21,7 @@ export function Hero() {
               <small>岛主 / agent builder</small>
             </span>
           </a>
+          <IslandMoodPanel variant="hero" />
           <p className="eyebrow">AI agents / frontend / notes</p>
           <h1>{profile.title}</h1>
           <p className="hero-subtitle">{profile.subtitle}</p>
@@ -46,7 +48,9 @@ export function Hero() {
         </Card>
         <Divider type="line-teal" />
       </div>
-      <NookPhoneDock />
+      <div className="hero-side">
+        <NookPhoneDock />
+      </div>
     </section>
   );
 }
