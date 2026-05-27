@@ -22,7 +22,7 @@ export function SiteFooter() {
               window.location.href = profile.links.email;
             }}
           >
-            {profile.email}
+            邮箱
           </Button>
         </div>
       </div>
