@@ -7,30 +7,30 @@ function getIslandGreeting(date = new Date()) {
   const hour = date.getHours();
 
   if (hour < 5) {
-    return "夜深了，本小岛的星星还醒着";
+    return "夜深了，小岛的星星还醒着";
   }
 
   if (hour < 9) {
-    return "早上好，本小岛今日海风很轻";
+    return "早上好，小岛今日海风很轻";
   }
 
   if (hour < 12) {
-    return "上午好，本小岛的阳光已经铺到工作台";
+    return "上午好，小岛的阳光已经铺到工作台";
   }
 
   if (hour < 14) {
-    return "中午好，本小岛正在晒暖暖的云";
+    return "中午好，小岛正在晒暖暖的云";
   }
 
   if (hour < 18) {
-    return "下午好，本小岛的潮水适合继续造工具";
+    return "下午好，小岛的潮水适合继续造工具";
   }
 
   if (hour < 22) {
-    return "晚上好，本小岛的灯已经一盏盏亮起来";
+    return "晚上好，小岛的灯已经一盏盏亮起来";
   }
 
-  return "深夜好，本小岛进入安静的灵感时间";
+  return "深夜好，小岛进入安静的灵感时间";
 }
 
 export function IslandBroadcast() {
