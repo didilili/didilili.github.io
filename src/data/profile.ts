@@ -1,3 +1,5 @@
+import type { CardColor, IconName } from "animal-island-ui";
+
 export type LinkItem = {
   label: string;
   href: string;
@@ -7,14 +9,8 @@ export type LinkItem = {
 export type DockItem = LinkItem & {
   key: string;
   description: string;
-  color:
-    | "app-blue"
-    | "app-yellow"
-    | "app-teal"
-    | "app-pink"
-    | "purple"
-    | "app-green";
-  iconName: string;
+  color: CardColor;
+  iconName: IconName;
 };
 
 export type NotePreview = {
@@ -64,7 +60,7 @@ export const dockItems: DockItem[] = [
     href: profile.links.tutorial,
     external: true,
     color: "app-yellow",
-    iconName: "icon-recipes",
+    iconName: "icon-diy",
   },
   {
     key: "notes",
@@ -81,7 +77,7 @@ export const dockItems: DockItem[] = [
     href: profile.links.github,
     external: true,
     color: "app-blue",
-    iconName: "icon-app",
+    iconName: "icon-miles",
   },
 ];
 
