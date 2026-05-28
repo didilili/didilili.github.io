@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Cursor, Divider, Loading } from "animal-island-ui";
 import { AboutSection } from "./components/AboutSection";
+import { AgentIncubator } from "./components/AgentIncubator";
 import { FriendLinks } from "./components/FriendLinks";
 import { Hero } from "./components/Hero";
 import { IslandBulletinBoard } from "./components/IslandBulletinBoard";
@@ -55,6 +56,7 @@ export default function App() {
           <Divider type="wave-yellow" />
           <ProjectCard />
           <Workbench />
+          <AgentIncubator />
           <NotesPreview />
           <FriendLinks />
         </main>
