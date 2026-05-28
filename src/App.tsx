@@ -6,6 +6,7 @@ import { FriendLinks } from "./components/FriendLinks";
 import { Hero } from "./components/Hero";
 import { IslandBulletinBoard } from "./components/IslandBulletinBoard";
 import { IslandBroadcast } from "./components/IslandBroadcast";
+import { IslandMascot } from "./components/IslandMascot";
 import { NotesPreview } from "./components/NotesPreview";
 import { ProjectCard } from "./components/ProjectCard";
 import { SiteFooter } from "./components/SiteFooter";
@@ -148,6 +149,7 @@ export default function App() {
           <NotesPreview />
           <FriendLinks />
         </main>
+        <IslandMascot />
         <SiteFooter />
       </div>
     </Cursor>

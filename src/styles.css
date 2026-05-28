@@ -2332,6 +2332,356 @@ html[data-island-theme="night"] .footer-link-button-dashed {
   }
 }
 
+.island-mascot {
+  position: fixed;
+  right: clamp(16px, 3vw, 42px);
+  bottom: clamp(92px, 12vh, 138px);
+  z-index: 12;
+  display: grid;
+  width: min(210px, calc(100vw - 32px));
+  justify-items: end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.mascot-bubble {
+  position: relative;
+  width: min(210px, calc(100vw - 32px));
+  padding: 12px 14px 13px;
+  color: #725d42;
+  background: rgba(255, 252, 235, 0.96);
+  border: 2px solid rgba(205, 185, 148, 0.95);
+  border-radius: 22px 22px 8px 22px;
+  box-shadow: 0 6px 0 rgba(151, 131, 104, 0.22);
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.island-mascot:hover .mascot-bubble,
+.island-mascot[data-mood="pat"] .mascot-bubble,
+.island-mascot[data-mood="happy"] .mascot-bubble {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.mascot-bubble::after {
+  position: absolute;
+  right: 28px;
+  bottom: -10px;
+  width: 18px;
+  height: 18px;
+  content: "";
+  background: inherit;
+  border-right: 2px solid rgba(205, 185, 148, 0.95);
+  border-bottom: 2px solid rgba(205, 185, 148, 0.95);
+  transform: rotate(45deg);
+}
+
+.mascot-bubble strong,
+.mascot-bubble span {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.mascot-bubble strong {
+  margin-bottom: 4px;
+  color: #009f98;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.mascot-bubble span {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.mascot-menu {
+  display: grid;
+  width: min(210px, calc(100vw - 32px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.96);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.island-mascot[data-menu-open="true"] .mascot-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.mascot-menu a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  color: #725d42;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  background: rgba(255, 252, 235, 0.96);
+  border: 2px dashed rgba(185, 162, 126, 0.92);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 rgba(151, 131, 104, 0.2);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mascot-menu a:hover {
+  color: #009f98;
+  border-color: #42cfc2;
+  box-shadow: 0 5px 0 rgba(42, 154, 147, 0.24);
+  transform: translateY(-2px);
+}
+
+.mascot-menu a:active {
+  box-shadow: 0 1px 0 rgba(42, 154, 147, 0.24);
+  transform: translateY(2px);
+}
+
+.mascot-touch-zone {
+  position: relative;
+  display: grid;
+  width: 142px;
+  height: 152px;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  background: transparent;
+  border: 0;
+  place-items: center;
+}
+
+.mascot-stage {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 118px;
+  height: 132px;
+  transform-origin: 50% 92%;
+  animation: mascot-breathe 3.2s ease-in-out infinite;
+  place-items: center;
+}
+
+.island-mascot[data-mood="peek"] .mascot-stage {
+  animation:
+    mascot-breathe 3.2s ease-in-out infinite,
+    mascot-peek 0.55s ease both;
+}
+
+.island-mascot[data-mood="pat"] .mascot-stage {
+  animation: mascot-pat 0.62s cubic-bezier(0.25, 1.6, 0.45, 1) both;
+}
+
+.island-mascot[data-mood="happy"] .mascot-stage {
+  animation: mascot-happy 0.9s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+}
+
+.mascot-stage img {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 0 rgba(92, 77, 57, 0.18));
+  user-select: none;
+}
+
+.mascot-image-night {
+  display: none !important;
+}
+
+html[data-island-theme="night"] .mascot-image-day {
+  display: none !important;
+}
+
+html[data-island-theme="night"] .mascot-image-night {
+  display: block !important;
+}
+
+.mascot-placeholder {
+  position: relative;
+  display: block;
+  width: 104px;
+  height: 126px;
+  filter: drop-shadow(0 12px 0 rgba(92, 77, 57, 0.18));
+}
+
+.mascot-ear {
+  position: absolute;
+  top: 12px;
+  z-index: 0;
+  width: 42px;
+  height: 48px;
+  background: #7a5938;
+  border: 3px solid #5f4329;
+  border-radius: 48% 52% 42% 58%;
+}
+
+.mascot-ear-left {
+  left: 4px;
+  transform: rotate(-24deg);
+}
+
+.mascot-ear-right {
+  right: 4px;
+  transform: rotate(24deg);
+}
+
+.mascot-face {
+  position: absolute;
+  top: 28px;
+  left: 8px;
+  z-index: 1;
+  width: 88px;
+  height: 82px;
+  background:
+    radial-gradient(circle at 32% 62%, rgba(255, 199, 171, 0.8) 0 7px, transparent 8px),
+    radial-gradient(circle at 68% 62%, rgba(255, 199, 171, 0.8) 0 7px, transparent 8px),
+    linear-gradient(180deg, #bd8d5b 0 34%, #f5d09f 35% 100%);
+  border: 4px solid #5f4329;
+  border-radius: 48% 48% 44% 44%;
+}
+
+.mascot-eye {
+  position: absolute;
+  top: 38px;
+  width: 8px;
+  height: 13px;
+  background: #392719;
+  border-radius: 999px;
+  animation: mascot-blink 5.4s ease-in-out infinite;
+}
+
+.mascot-eye-left {
+  left: 26px;
+}
+
+.mascot-eye-right {
+  right: 26px;
+}
+
+.mascot-nose {
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  width: 14px;
+  height: 9px;
+  background: #5b3a25;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.mascot-apron {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 62px;
+  height: 38px;
+  background:
+    radial-gradient(circle at 50% 33%, #fff2bc 0 7px, transparent 8px),
+    #65c7b4;
+  border: 3px solid #4c9c90;
+  border-radius: 20px 20px 26px 26px;
+  transform: translateX(-50%);
+}
+
+.mascot-shadow {
+  position: absolute;
+  bottom: 4px;
+  z-index: 1;
+  width: 102px;
+  height: 18px;
+  background: rgba(83, 70, 48, 0.18);
+  border-radius: 50%;
+  transform-origin: center;
+  animation: mascot-shadow 3.2s ease-in-out infinite;
+}
+
+.mascot-sparkle {
+  position: absolute;
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  background: #fff189;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(255, 241, 137, 0.18);
+  opacity: 0;
+}
+
+.mascot-sparkle-a {
+  top: 22px;
+  left: 14px;
+}
+
+.mascot-sparkle-b {
+  top: 12px;
+  right: 20px;
+  transform: scale(0.72);
+}
+
+.island-mascot[data-mood="pat"] .mascot-sparkle,
+.island-mascot[data-mood="happy"] .mascot-sparkle {
+  animation: mascot-sparkle 0.9s ease-out both;
+}
+
+.island-mascot[data-mood="happy"] .mascot-sparkle-b {
+  animation-delay: 0.12s;
+}
+
+html[data-island-theme="night"] .mascot-bubble {
+  color: #fff0b8;
+  background: rgba(25, 36, 72, 0.94);
+  border-color: rgba(255, 240, 184, 0.48);
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.24),
+    0 0 32px rgba(255, 240, 184, 0.08);
+}
+
+html[data-island-theme="night"] .mascot-bubble::after {
+  border-color: rgba(255, 240, 184, 0.48);
+}
+
+html[data-island-theme="night"] .mascot-bubble strong {
+  color: #75e6d4;
+}
+
+html[data-island-theme="night"] .mascot-menu a {
+  color: #fff0b8;
+  background: rgba(25, 36, 72, 0.94);
+  border-color: rgba(255, 240, 184, 0.48);
+  box-shadow:
+    0 4px 0 rgba(0, 0, 0, 0.24),
+    0 0 24px rgba(255, 240, 184, 0.07);
+}
+
+html[data-island-theme="night"] .mascot-menu a:hover {
+  color: #75e6d4;
+  border-color: rgba(117, 230, 212, 0.7);
+}
+
+html[data-island-theme="night"] .mascot-stage img,
+html[data-island-theme="night"] .mascot-placeholder {
+  filter:
+    drop-shadow(0 12px 0 rgba(0, 0, 0, 0.24))
+    drop-shadow(0 0 24px rgba(255, 240, 184, 0.2));
+}
+
 @keyframes celestial-sunset-wash {
   0% {
     opacity: 0;
@@ -2495,6 +2845,107 @@ html[data-island-theme="night"] .footer-link-button-dashed {
   }
 }
 
+@keyframes mascot-breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-3px) scale(1.015);
+  }
+}
+
+@keyframes mascot-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.78;
+  }
+
+  50% {
+    transform: scaleX(0.9);
+    opacity: 0.58;
+  }
+}
+
+@keyframes mascot-peek {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  44% {
+    transform: rotate(-4deg) translateY(-4px);
+  }
+}
+
+@keyframes mascot-pat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  30% {
+    transform: translateY(5px) scale(1.04, 0.94);
+  }
+
+  58% {
+    transform: translateY(-8px) scale(0.96, 1.06) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes mascot-happy {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  28% {
+    transform: translateY(-16px) rotate(-6deg) scale(1.04);
+  }
+
+  56% {
+    transform: translateY(-8px) rotate(5deg) scale(1.02);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes mascot-sparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.2);
+  }
+
+  42% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1.4);
+  }
+}
+
+@keyframes mascot-blink {
+  0%,
+  88%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  92%,
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
 @media (max-width: 920px) {
   .island-page {
     --night-sky-depth: 3050px;
@@ -2574,6 +3025,13 @@ html[data-island-theme="night"] .footer-link-button-dashed {
     right: auto;
     justify-self: start;
   }
+
+  .island-mascot {
+    right: 14px;
+    bottom: 72px;
+    transform: scale(0.86);
+    transform-origin: right bottom;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2583,7 +3041,11 @@ html[data-island-theme="night"] .footer-link-button-dashed {
   .ocean-fish,
   .ocean-boat,
   .ocean-gull,
-  .ocean-gull-wing {
+  .ocean-gull-wing,
+  .mascot-stage,
+  .mascot-shadow,
+  .mascot-eye,
+  .mascot-sparkle {
     animation: none;
   }
 }
@@ -2658,5 +3120,18 @@ html[data-island-theme="night"] .footer-link-button-dashed {
 
   .island-loading-surface .illustration {
     width: 150px !important;
+  }
+
+  .island-mascot {
+    width: 148px;
+  }
+
+  .mascot-bubble {
+    display: none;
+  }
+
+  .mascot-menu {
+    width: 148px;
+    grid-template-columns: 1fr;
   }
 }
