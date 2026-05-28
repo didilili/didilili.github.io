@@ -11,7 +11,19 @@ const navItems = [
   { label: "联系", href: "#contact" },
 ];
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  theme: "day" | "night";
+  onThemeToggle: () => void;
+  themeTransitioning?: boolean;
+};
+
+export function SiteHeader({
+  theme,
+  onThemeToggle,
+  themeTransitioning = false,
+}: SiteHeaderProps) {
+  const isNight = theme === "night";
+
   return (
     <header className="site-header">
       <a className="brand-bubble" href="#top" aria-label="回到顶部">
@@ -26,13 +38,19 @@ export function SiteHeader() {
       </nav>
       <div className="header-tools">
         <span className="status-pill">{profile.status}</span>
-        <Button
-          type="primary"
-          size="small"
-          onClick={() => window.open(profile.links.github, "_blank", "noopener")}
+        <button
+          type="button"
+          className="theme-toggle"
+          aria-label={isNight ? "切换到白天主题" : "切换到黑夜主题"}
+          aria-pressed={isNight}
+          disabled={themeTransitioning}
+          onClick={onThemeToggle}
         >
-          GitHub
-        </Button>
+          <span className="theme-toggle-track" aria-hidden="true">
+            <span className="theme-toggle-orb" />
+          </span>
+          <span>{isNight ? "夜晚" : "白天"}</span>
+        </button>
       </div>
       <div className="header-time" aria-label="小岛时间">
         <Time />
