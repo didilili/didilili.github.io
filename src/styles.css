@@ -2333,6 +2333,8 @@ html[data-island-theme="night"] .footer-link-button-dashed {
 }
 
 .island-mascot {
+  --mascot-scale: 0.82;
+
   position: fixed;
   right: clamp(16px, 3vw, 42px);
   bottom: clamp(92px, 12vh, 138px);
@@ -2342,6 +2344,8 @@ html[data-island-theme="night"] .footer-link-button-dashed {
   justify-items: end;
   gap: 8px;
   pointer-events: none;
+  transform: scale(var(--mascot-scale));
+  transform-origin: right bottom;
 }
 
 .mascot-bubble {
@@ -2365,6 +2369,11 @@ html[data-island-theme="night"] .footer-link-button-dashed {
 .island-mascot[data-mood="happy"] .mascot-bubble {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.island-mascot[data-menu-open="true"] .mascot-bubble {
+  opacity: 0;
+  transform: translateY(10px) scale(0.92);
 }
 
 .mascot-bubble::after {
@@ -2401,56 +2410,248 @@ html[data-island-theme="night"] .footer-link-button-dashed {
 }
 
 .mascot-menu {
-  display: grid;
-  width: min(210px, calc(100vw - 32px));
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  --orbit-center-x: 154px;
+  --orbit-center-y: 86px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 220px;
+  height: 176px;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(8px) scale(0.96);
+  transform: translate(22px, 18px) scale(0.68) rotate(-14deg);
+  transform-origin: right bottom;
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    opacity 0.22s ease,
+    transform 0.28s cubic-bezier(0.2, 1.45, 0.35, 1);
+}
+
+.mascot-menu::before {
+  display: none;
 }
 
 .island-mascot[data-menu-open="true"] .mascot-menu {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  transform: translate(0, 0) scale(1) rotate(0deg);
+}
+
+.island-mascot[data-menu-open="true"] .mascot-menu::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .mascot-menu a {
+  position: absolute;
   display: inline-flex;
-  min-height: 36px;
+  top: var(--orbit-center-y);
+  left: var(--orbit-center-x);
+  width: 42px;
+  height: 42px;
+  min-height: 0;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0;
   color: #725d42;
-  font-size: 13px;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 1000;
   line-height: 1;
   text-align: center;
-  background: rgba(255, 252, 235, 0.96);
-  border: 2px dashed rgba(185, 162, 126, 0.92);
-  border-radius: 999px;
-  box-shadow: 0 4px 0 rgba(151, 131, 104, 0.2);
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.9) 0 9px, transparent 10px),
+    #fffceb;
+  border: 2px solid rgba(185, 162, 126, 0.92);
+  border-radius: 50%;
+  box-shadow:
+    0 4px 0 rgba(151, 131, 104, 0.2),
+    0 0 0 5px rgba(255, 252, 235, 0.28);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.64);
   transition:
+    opacity 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease,
-    transform 0.2s ease;
+    transform 0.26s cubic-bezier(0.2, 1.45, 0.35, 1);
+}
+
+.island-mascot[data-menu-open="true"] .mascot-menu a {
+  opacity: 1;
+  transform: translate(
+      calc(var(--orbit-x) - 50%),
+      calc(var(--orbit-y) - 50%)
+    )
+    scale(1);
+}
+
+.island-mascot[data-menu-open="true"] .mascot-action-board {
+  transition-delay: 0.02s;
+}
+
+.island-mascot[data-menu-open="true"] .mascot-action-book {
+  transition-delay: 0.05s;
+}
+
+.island-mascot[data-menu-open="true"] .mascot-action-egg {
+  transition-delay: 0.08s;
+}
+
+.island-mascot[data-menu-open="true"] .mascot-action-mail {
+  transition-delay: 0.11s;
+}
+
+.mascot-action-board {
+  --orbit-x: -98px;
+  --orbit-y: -70px;
+}
+
+.mascot-action-book {
+  --orbit-x: -136px;
+  --orbit-y: -18px;
+}
+
+.mascot-action-egg {
+  --orbit-x: -128px;
+  --orbit-y: 42px;
+}
+
+.mascot-action-mail {
+  --orbit-x: -82px;
+  --orbit-y: 82px;
+}
+
+.mascot-action-mark {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 25px;
+  color: #009f98;
+}
+
+.mascot-action-mark::before,
+.mascot-action-mark::after,
+.mascot-action-mark span {
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+.mascot-action-mark-board::before {
+  inset: 5px 4px 7px;
+  background: #ffd66c;
+  border: 2px solid #7d6348;
+  border-radius: 4px;
+}
+
+.mascot-action-mark-board::after {
+  top: 4px;
+  left: 11px;
+  width: 3px;
+  height: 18px;
+  background: #7d6348;
+  border-radius: 999px;
+}
+
+.mascot-action-mark-book::before,
+.mascot-action-mark-book::after {
+  top: 5px;
+  width: 10px;
+  height: 15px;
+  background: #8ce3d5;
+  border: 2px solid #7d6348;
+}
+
+.mascot-action-mark-book::before {
+  left: 2px;
+  border-radius: 7px 2px 2px 7px;
+}
+
+.mascot-action-mark-book::after {
+  right: 2px;
+  border-radius: 2px 7px 7px 2px;
+}
+
+.mascot-action-mark-egg::before {
+  inset: 3px 6px 2px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.82) 0 3px, transparent 4px),
+    #fff0b8;
+  border: 2px solid #7d6348;
+  border-radius: 48% 52% 48% 52% / 58% 58% 42% 42%;
+}
+
+.mascot-action-mark-egg::after {
+  right: 4px;
+  bottom: 3px;
+  width: 8px;
+  height: 8px;
+  background: #42cfc2;
+  border-radius: 50%;
+}
+
+.mascot-action-mark-mail::before {
+  inset: 6px 3px 5px;
+  background: #fff0b8;
+  border: 2px solid #7d6348;
+  border-radius: 4px;
+}
+
+.mascot-action-mark-mail::after {
+  top: 8px;
+  left: 5px;
+  width: 15px;
+  height: 11px;
+  border-right: 2px solid #7d6348;
+  border-bottom: 2px solid #7d6348;
+  transform: rotate(45deg) skew(-8deg, -8deg);
+}
+
+.mascot-action-label {
+  position: absolute;
+  right: 38px;
+  min-width: max-content;
+  padding: 7px 10px 8px;
+  color: #725d42;
+  background: rgba(255, 252, 235, 0.96);
+  border: 2px dashed rgba(185, 162, 126, 0.92);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 rgba(151, 131, 104, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px) scale(0.94);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.mascot-menu a:hover .mascot-action-label,
+.mascot-menu a:focus-visible .mascot-action-label {
+  opacity: 1;
+  transform: translateX(0) scale(1);
 }
 
 .mascot-menu a:hover {
   color: #009f98;
   border-color: #42cfc2;
-  box-shadow: 0 5px 0 rgba(42, 154, 147, 0.24);
-  transform: translateY(-2px);
+  box-shadow:
+    0 5px 0 rgba(42, 154, 147, 0.24),
+    0 0 0 7px rgba(66, 207, 194, 0.16);
+  transform: translate(
+      calc(var(--orbit-x) - 50%),
+      calc(var(--orbit-y) - 50% - 2px)
+    )
+    scale(1.06);
 }
 
 .mascot-menu a:active {
   box-shadow: 0 1px 0 rgba(42, 154, 147, 0.24);
-  transform: translateY(2px);
+  transform: translate(
+      calc(var(--orbit-x) - 50%),
+      calc(var(--orbit-y) - 50% + 2px)
+    )
+    scale(0.98);
 }
 
 .mascot-touch-zone {
@@ -2663,16 +2864,29 @@ html[data-island-theme="night"] .mascot-bubble strong {
 
 html[data-island-theme="night"] .mascot-menu a {
   color: #fff0b8;
-  background: rgba(25, 36, 72, 0.94);
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 240, 184, 0.26) 0 9px, transparent 10px),
+    rgba(25, 36, 72, 0.94);
   border-color: rgba(255, 240, 184, 0.48);
   box-shadow:
     0 4px 0 rgba(0, 0, 0, 0.24),
-    0 0 24px rgba(255, 240, 184, 0.07);
+    0 0 24px rgba(255, 240, 184, 0.07),
+    0 0 0 5px rgba(255, 240, 184, 0.08);
 }
 
 html[data-island-theme="night"] .mascot-menu a:hover {
   color: #75e6d4;
   border-color: rgba(117, 230, 212, 0.7);
+}
+
+html[data-island-theme="night"] .mascot-menu::before {
+  display: none;
+}
+
+html[data-island-theme="night"] .mascot-action-label {
+  color: #fff0b8;
+  background: rgba(25, 36, 72, 0.96);
+  border-color: rgba(255, 240, 184, 0.48);
 }
 
 html[data-island-theme="night"] .mascot-stage img,
@@ -3027,10 +3241,10 @@ html[data-island-theme="night"] .mascot-placeholder {
   }
 
   .island-mascot {
+    --mascot-scale: 0.76;
+
     right: 14px;
     bottom: 72px;
-    transform: scale(0.86);
-    transform-origin: right bottom;
   }
 }
 
@@ -3131,7 +3345,46 @@ html[data-island-theme="night"] .mascot-placeholder {
   }
 
   .mascot-menu {
-    width: 148px;
-    grid-template-columns: 1fr;
+    --orbit-center-x: 120px;
+    --orbit-center-y: 76px;
+
+    right: 0;
+    bottom: 0;
+    width: 174px;
+    height: 148px;
+    transform: translate(18px, 14px) scale(0.68) rotate(-10deg);
+  }
+
+  .mascot-menu::before {
+    display: none;
+  }
+
+  .mascot-menu a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mascot-action-board {
+    --orbit-x: -76px;
+    --orbit-y: -56px;
+  }
+
+  .mascot-action-book {
+    --orbit-x: -106px;
+    --orbit-y: -14px;
+  }
+
+  .mascot-action-egg {
+    --orbit-x: -100px;
+    --orbit-y: 34px;
+  }
+
+  .mascot-action-mail {
+    --orbit-x: -66px;
+    --orbit-y: 64px;
+  }
+
+  .mascot-action-label {
+    display: none;
   }
 }

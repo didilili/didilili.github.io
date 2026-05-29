@@ -14,10 +14,16 @@ const mascotLines = [
 ];
 
 const mascotActions = [
-  { label: "公告板", href: "#bulletin", note: "带你去看看岛上的便签。" },
-  { label: "看教程", href: profile.links.tutorial, note: "从零登岛路线准备好了。", external: true },
-  { label: "孵化器", href: "#incubator", note: "去孵一只新的 agent 草图。" },
-  { label: "联系岛主", href: "#contact", note: "给岛主递一封漂流瓶。" },
+  { label: "公告板", icon: "board", href: "#bulletin", note: "带你去看看岛上的便签。" },
+  {
+    label: "看教程",
+    icon: "book",
+    href: profile.links.tutorial,
+    note: "从零登岛路线准备好了。",
+    external: true,
+  },
+  { label: "孵化器", icon: "egg", href: "#incubator", note: "去孵一只新的 agent 草图。" },
+  { label: "联系岛主", icon: "mail", href: "#contact", note: "给岛主递一封漂流瓶。" },
 ];
 
 function getTodayLineIndex() {
@@ -83,12 +89,21 @@ export function IslandMascot() {
         {mascotActions.map((action) => (
           <a
             key={action.href}
+            className={`mascot-action mascot-action-${action.icon}`}
             href={action.href}
             target={action.external ? "_blank" : undefined}
             rel={action.external ? "noopener noreferrer" : undefined}
+            title={action.label}
+            aria-label={action.label}
             onClick={() => handleAction(action.note)}
           >
-            {action.label}
+            <span
+              className={`mascot-action-mark mascot-action-mark-${action.icon}`}
+              aria-hidden="true"
+            >
+              <span />
+            </span>
+            <span className="mascot-action-label">{action.label}</span>
           </a>
         ))}
       </nav>
